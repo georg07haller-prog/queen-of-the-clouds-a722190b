@@ -100,7 +100,7 @@ export default function Home() {
               <img 
                 src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/69160be603b85195a722190b/9b2be30ff_Crown.png"
                 alt="Queen of the Clouds Logo"
-                className="w-64 md:w-96 mx-auto drop-shadow-2xl"
+                className="w-48 md:w-64 mx-auto drop-shadow-2xl"
               />
             </motion.div>
             <p className="text-xl text-purple-900 mb-2">Rise Above the Digital Purgatory</p>
