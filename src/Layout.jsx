@@ -1,13 +1,28 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { HelpCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import TutorialModal from './components/TutorialModal';
+import PageTransition from './components/PageTransition';
 
 export default function Layout({ children, currentPageName }) {
   const [showTutorial, setShowTutorial] = useState(false);
+  const [isTransitioning, setIsTransitioning] = useState(false);
+  const [prevPage, setPrevPage] = useState(currentPageName);
+  
+  useEffect(() => {
+    if (prevPage !== currentPageName) {
+      setIsTransitioning(true);
+      const timer = setTimeout(() => {
+        setIsTransitioning(false);
+        setPrevPage(currentPageName);
+      }, 2000);
+      return () => clearTimeout(timer);
+    }
+  }, [currentPageName, prevPage]);
   
   return (
     <div className="relative min-h-screen">
+      <PageTransition isTransitioning={isTransitioning} />
       {children}
       
       {/* Floating Tutorial Button */}
