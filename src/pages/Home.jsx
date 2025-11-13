@@ -93,12 +93,12 @@ export default function Home() {
             className="text-center mb-12"
           >
             <motion.div
-              animate={{ scale: [1, 1.05, 1] }}
-              transition={{ duration: 3, repeat: Infinity }}
+              animate={{ rotate: [0, 5, -5, 0] }}
+              transition={{ duration: 2, repeat: Infinity }}
               className="inline-block mb-6"
             >
               <img 
-                src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/69160be603b85195a722190b/a190688f3_f57ad572-b31e-47e9-95a7-520ea61456c2.png"
+                src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/69160be603b85195a722190b/b1c971f29_image52.jpg"
                 alt="Queen of the Clouds Logo"
                 className="w-64 md:w-96 mx-auto drop-shadow-2xl"
               />
