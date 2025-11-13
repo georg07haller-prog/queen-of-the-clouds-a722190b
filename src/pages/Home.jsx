@@ -98,7 +98,7 @@ export default function Home() {
               className="inline-block mb-6"
             >
               <img 
-                src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/69160be603b85195a722190b/b1c971f29_image52.jpg"
+                src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/69160be603b85195a722190b/9b2be30ff_Crown.png"
                 alt="Queen of the Clouds Logo"
                 className="w-64 md:w-96 mx-auto drop-shadow-2xl"
               />
