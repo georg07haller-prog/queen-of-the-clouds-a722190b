@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Share2, Twitter, Instagram, Download } from 'lucide-react';
 import { toast } from 'sonner';
 
-export default function ShareButtons({ content, contentType }) {
+export default function ShareButtons({ content, contentType, imageUrl }) {
   const handleShare = (platform) => {
     const text = encodeURIComponent(content + '\n\n#AngelSisters #QueenOfTheClouds');
     
@@ -13,6 +13,21 @@ export default function ShareButtons({ content, contentType }) {
     } else if (platform === 'copy') {
       navigator.clipboard.writeText(content + '\n\n#AngelSisters #QueenOfTheClouds');
       toast.success('Copied to clipboard! 💜');
+    } else if (platform === 'instagram') {
+      if (imageUrl) {
+        // Download image for Instagram Story
+        const link = document.createElement('a');
+        link.href = imageUrl;
+        link.download = 'queen-of-clouds-meme.png';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        toast.success('Image downloaded! Now upload it to Instagram Stories 📸');
+      } else {
+        // Copy text for Instagram
+        navigator.clipboard.writeText(content + '\n\n#AngelSisters #QueenOfTheClouds');
+        toast.success('Text copied! Paste it in your Instagram Story 💜');
+      }
     }
   };
   
@@ -36,11 +51,12 @@ export default function ShareButtons({ content, contentType }) {
       </Button>
       
       <Button
+        onClick={() => handleShare('instagram')}
         variant="outline"
         className="border-pink-300 text-pink-700 hover:bg-pink-50 gap-2"
       >
         <Instagram className="w-4 h-4" />
-        Instagram Story
+        {imageUrl ? 'Download for Instagram' : 'Copy for Instagram'}
       </Button>
     </div>
   );

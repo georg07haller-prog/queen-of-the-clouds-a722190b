@@ -228,6 +228,7 @@ export default function MemeMode() {
               <ShareButtons 
                 content={`${generatedMeme.top_text}\n\n${generatedMeme.bottom_text}\n\n${generatedMeme.caption}`}
                 contentType="meme"
+                imageUrl={generatedMeme.image_url}
               />
               
               {/* Success Message */}
