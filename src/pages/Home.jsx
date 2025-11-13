@@ -93,15 +93,16 @@ export default function Home() {
             className="text-center mb-12"
           >
             <motion.div
-              animate={{ rotate: [0, 5, -5, 0] }}
-              transition={{ duration: 2, repeat: Infinity }}
-              className="inline-block mb-4"
+              animate={{ scale: [1, 1.05, 1] }}
+              transition={{ duration: 3, repeat: Infinity }}
+              className="inline-block mb-6"
             >
-              <Crown className="w-20 h-20 text-purple-500" />
+              <img 
+                src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/69160be603b85195a722190b/155554007_f95f921e-35e2-4b93-8d3a-3d1cc44b1c49.png"
+                alt="Queen of the Clouds Logo"
+                className="w-64 md:w-96 mx-auto drop-shadow-2xl"
+              />
             </motion.div>
-            <h1 className="text-5xl md:text-7xl font-bold mb-4 bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 bg-clip-text text-transparent">
-              Queen of the Clouds
-            </h1>
             <p className="text-xl text-purple-900 mb-2">Rise Above the Digital Purgatory</p>
             <p className="text-gray-600 max-w-2xl mx-auto">
               Transform career burnout and imposter syndrome into empowering content. 

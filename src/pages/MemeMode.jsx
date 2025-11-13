@@ -108,8 +108,16 @@ export default function MemeMode() {
   };
   
   return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-50 via-purple-50 to-pink-100">
-      <div className="max-w-4xl mx-auto px-4 py-8">
+    <div className="min-h-screen bg-gradient-to-br from-pink-50 via-purple-50 to-pink-100 relative overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0 opacity-10 pointer-events-none">
+        <img 
+          src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/69160be603b85195a722190b/8b16f7900_f26b7ff5-0805-4a8d-9cbf-7f6fc363331d.png"
+          alt="background"
+          className="w-full h-full object-cover"
+        />
+      </div>
+      <div className="max-w-4xl mx-auto px-4 py-8 relative z-10">
         {/* Header */}
         <div className="flex items-center gap-4 mb-8">
           <Link to={createPageUrl('Home')}>

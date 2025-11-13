@@ -99,8 +99,16 @@ export default function WellnessWhirlwind() {
   };
   
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 via-teal-50 to-emerald-100">
-      <div className="max-w-4xl mx-auto px-4 py-8">
+    <div className="min-h-screen bg-gradient-to-br from-green-50 via-teal-50 to-emerald-100 relative overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0 opacity-20 pointer-events-none">
+        <img 
+          src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/69160be603b85195a722190b/b8c56baae_c5e1a78f-cdc8-42c5-8217-b35256a500e7.png"
+          alt="background"
+          className="w-full h-full object-cover"
+        />
+      </div>
+      <div className="max-w-4xl mx-auto px-4 py-8 relative z-10">
         <div className="flex items-center gap-4 mb-8">
           <Link to={createPageUrl('Home')}>
             <Button variant="ghost" className="gap-2">

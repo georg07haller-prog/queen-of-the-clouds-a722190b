@@ -48,7 +48,11 @@ export default function TutorialModal({ isOpen, onClose }) {
             className="bg-white rounded-3xl p-8 max-w-lg w-full shadow-2xl border-4 border-purple-300"
           >
             <div className="text-center mb-6">
-              <Crown className="w-16 h-16 mx-auto text-purple-500 mb-4" />
+              <img 
+                src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/69160be603b85195a722190b/2c55a18d3_204c3475-fa0f-4e5f-b2b0-c591a2f8773a.png"
+                alt="Queen"
+                className="w-32 h-32 mx-auto object-cover rounded-full mb-4 shadow-xl border-4 border-purple-300"
+              />
               <h2 className="text-3xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-2">
                 {tutorialSteps[tutorialStep].title}
               </h2>

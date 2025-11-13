@@ -103,8 +103,16 @@ export default function VideoVortex() {
   };
   
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-indigo-50 to-purple-100">
-      <div className="max-w-4xl mx-auto px-4 py-8">
+    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-indigo-50 to-purple-100 relative overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0 opacity-10 pointer-events-none">
+        <img 
+          src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/69160be603b85195a722190b/3f6da6207_749a7476-94a8-4d48-92a1-3d2d2dfea743.png"
+          alt="background"
+          className="w-full h-full object-cover"
+        />
+      </div>
+      <div className="max-w-4xl mx-auto px-4 py-8 relative z-10">
         <div className="flex items-center gap-4 mb-8">
           <Link to={createPageUrl('Home')}>
             <Button variant="ghost" className="gap-2">
