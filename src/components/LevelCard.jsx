@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Lock, CheckCircle2, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { createPageUrl } from './utils';
+import { createPageUrl } from '@/utils';
 
 export default function LevelCard({ title, description, icon: Icon, isLocked, isCompleted, pageName, bgColor }) {
   return (
