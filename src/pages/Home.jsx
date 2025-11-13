@@ -101,6 +101,7 @@ export default function Home() {
                 src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/69160be603b85195a722190b/155554007_f95f921e-35e2-4b93-8d3a-3d1cc44b1c49.png"
                 alt="Queen of the Clouds Logo"
                 className="w-64 md:w-96 mx-auto drop-shadow-2xl"
+                style={{ mixBlendMode: 'multiply' }}
               />
             </motion.div>
             <p className="text-xl text-purple-900 mb-2">Rise Above the Digital Purgatory</p>
