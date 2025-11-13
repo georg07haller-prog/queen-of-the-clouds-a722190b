@@ -67,6 +67,13 @@ export default function MemeMode() {
         }
       });
       
+      // Generate meme image
+      const imageResponse = await base44.integrations.Core.GenerateImage({
+        prompt: `A funny, empowering meme image about: ${prompt}. Modern, relatable scene for women aged 25-45. Professional photography style, bright and uplifting colors. Suitable for social media sharing. The image should convey: ${memeResponse.top_text} and ${memeResponse.bottom_text}`,
+      });
+      
+      memeResponse.image_url = imageResponse.url;
+      
       // Save to database
       const saved = await base44.entities.GeneratedContent.create({
         content_type: 'meme',
@@ -193,14 +200,18 @@ export default function MemeMode() {
           >
             <Card className="p-8 bg-white/90 backdrop-blur-sm border-2 border-purple-300 shadow-xl">
               {/* Meme Display */}
-              <div className="mb-6 bg-gradient-to-br from-purple-600 to-pink-600 rounded-2xl p-8 text-center">
-                <p className="text-white text-2xl font-bold mb-4">
+              <div className="mb-6 bg-gradient-to-br from-purple-600 to-pink-600 rounded-2xl p-6 text-center">
+                <p className="text-white text-2xl font-bold mb-4 px-4">
                   {generatedMeme.top_text}
                 </p>
-                <div className="bg-white/20 rounded-xl p-6 my-4">
-                  <p className="text-white/90 text-sm">[ Your meme image would appear here ]</p>
+                <div className="my-4">
+                  <img 
+                    src={generatedMeme.image_url} 
+                    alt="Generated Meme" 
+                    className="w-full max-w-md mx-auto rounded-xl shadow-2xl"
+                  />
                 </div>
-                <p className="text-white text-2xl font-bold">
+                <p className="text-white text-2xl font-bold mt-4 px-4">
                   {generatedMeme.bottom_text}
                 </p>
               </div>
