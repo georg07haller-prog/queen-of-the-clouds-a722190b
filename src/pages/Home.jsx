@@ -86,16 +86,16 @@ export default function Home() {
         <div className="absolute top-20 left-10 w-64 h-64 bg-purple-300/30 rounded-full blur-3xl" />
         <div className="absolute bottom-10 right-10 w-96 h-96 bg-pink-300/30 rounded-full blur-3xl" />
         
-        <div className="relative max-w-6xl mx-auto px-4 py-12">
+        <div className="relative max-w-6xl mx-auto px-4 py-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-center mb-12"
+            className="text-center mb-6"
           >
             <motion.div
               animate={{ rotate: [0, 5, -5, 0] }}
               transition={{ duration: 2, repeat: Infinity }}
-              className="inline-block mb-6"
+              className="inline-block mb-3"
             >
               <img 
                 src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/69160be603b85195a722190b/9b2be30ff_Crown.png"
