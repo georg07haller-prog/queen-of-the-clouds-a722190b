@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import ModeCard from '../components/ModeCard';
 import LevelCard from '../components/LevelCard';
 import FaithMeter from '../components/FaithMeter';
+import TutorialModal from '../components/TutorialModal';
 
 export default function Home() {
   const [showTutorial, setShowTutorial] = useState(false);
@@ -67,84 +68,17 @@ export default function Home() {
     setShowTutorial(false);
   };
   
-  const tutorialSteps = [
-    {
-      title: "Welcome, Angel Sister! 👑",
-      content: "You are the Queen of the Clouds, a fierce angel navigating the digital purgatory of endless social media scrolls. Your mission: transform challenges into empowerment!",
-    },
-    {
-      title: "Faith Meter ✨",
-      content: "Earn faith points by creating content, completing challenges, and spreading positivity. Reach 777 points to unlock special filters and rewards!",
-    },
-    {
-      title: "Three Magical Modes 🎨",
-      content: "Choose your path: Generate relatable memes, create inspiring video scripts, or craft empowering tweets. Each creation earns you faith points!",
-    },
-    {
-      title: "Conquer Three Realms 🌟",
-      content: "Battle through Office Inferno, heal in Wellness Whirlwind, and network in Sisterhood Summit. Each level brings new challenges and rewards!",
-    },
-  ];
+
   
   return (
     <div className="min-h-screen bg-gradient-to-br from-pink-50 via-purple-50 to-blue-50">
       {/* Tutorial Modal */}
-      <AnimatePresence>
-        {showTutorial && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4"
-          >
-            <motion.div
-              initial={{ scale: 0.9, y: 20 }}
-              animate={{ scale: 1, y: 0 }}
-              exit={{ scale: 0.9, y: 20 }}
-              className="bg-white rounded-3xl p-8 max-w-lg w-full shadow-2xl border-4 border-purple-300"
-            >
-              <div className="text-center mb-6">
-                <Crown className="w-16 h-16 mx-auto text-purple-500 mb-4" />
-                <h2 className="text-3xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-2">
-                  {tutorialSteps[tutorialStep].title}
-                </h2>
-                <p className="text-gray-700 leading-relaxed text-lg">
-                  {tutorialSteps[tutorialStep].content}
-                </p>
-              </div>
-              
-              <div className="flex gap-2 justify-center mb-4">
-                {tutorialSteps.map((_, i) => (
-                  <div
-                    key={i}
-                    className={`h-2 rounded-full transition-all ${
-                      i === tutorialStep ? 'w-8 bg-purple-500' : 'w-2 bg-purple-200'
-                    }`}
-                  />
-                ))}
-              </div>
-              
-              <div className="flex gap-3">
-                {tutorialStep < tutorialSteps.length - 1 ? (
-                  <Button
-                    onClick={() => setTutorialStep(tutorialStep + 1)}
-                    className="flex-1 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white py-6 text-lg"
-                  >
-                    Next
-                  </Button>
-                ) : (
-                  <Button
-                    onClick={completeTutorial}
-                    className="flex-1 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white py-6 text-lg"
-                  >
-                    Start Your Journey! ✨
-                  </Button>
-                )}
-              </div>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      <TutorialModal 
+        isOpen={showTutorial} 
+        onClose={() => {
+          completeTutorial();
+        }} 
+      />
       
       {/* Hero Section */}
       <div className="relative overflow-hidden">

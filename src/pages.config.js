@@ -5,6 +5,7 @@ import TweetTempest from './pages/TweetTempest';
 import OfficeInferno from './pages/OfficeInferno';
 import WellnessWhirlwind from './pages/WellnessWhirlwind';
 import SisterhoodSummit from './pages/SisterhoodSummit';
+import Layout from './Layout.jsx';
 
 
 export const PAGES = {
@@ -20,4 +21,5 @@ export const PAGES = {
 export const pagesConfig = {
     mainPage: "Home",
     Pages: PAGES,
+    Layout: Layout,
 };
