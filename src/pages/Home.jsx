@@ -8,6 +8,7 @@ import ModeCard from '../components/ModeCard';
 import LevelCard from '../components/LevelCard';
 import FaithMeter from '../components/FaithMeter';
 import TutorialModal from '../components/TutorialModal';
+import Footer from '../components/Footer';
 
 export default function Home() {
   const [showTutorial, setShowTutorial] = useState(false);

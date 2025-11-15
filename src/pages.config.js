@@ -10,6 +10,7 @@ import FAQ from './pages/FAQ';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
 import Referral from './pages/Referral';
+import Profile from './pages/Profile';
 import Layout from './Layout.jsx';
 
 
@@ -26,6 +27,7 @@ export const PAGES = {
     "PrivacyPolicy": PrivacyPolicy,
     "TermsOfService": TermsOfService,
     "Referral": Referral,
+    "Profile": Profile,
 }
 
 export const pagesConfig = {
