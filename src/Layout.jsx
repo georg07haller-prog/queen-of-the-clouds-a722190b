@@ -9,6 +9,9 @@ export default function Layout({ children, currentPageName }) {
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [prevPage, setPrevPage] = useState(currentPageName);
   
+  // Don't show tutorial button on Landing, FAQ, Privacy, Terms, or Referral pages
+  const hideButtons = ['Landing', 'FAQ', 'PrivacyPolicy', 'TermsOfService', 'Referral'].includes(currentPageName);
+  
   useEffect(() => {
     if (prevPage !== currentPageName) {
       setIsTransitioning(true);
@@ -25,14 +28,16 @@ export default function Layout({ children, currentPageName }) {
       <PageTransition isTransitioning={isTransitioning} />
       {children}
       
-      {/* Floating Tutorial Button */}
-      <Button
-        onClick={() => setShowTutorial(true)}
-        className="fixed bottom-6 right-6 w-14 h-14 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 shadow-xl hover:shadow-2xl transition-all z-40"
-        title="View Tutorial"
-      >
-        <HelpCircle className="w-6 h-6 text-white" />
-      </Button>
+      {/* Floating Tutorial Button - hide on certain pages */}
+      {!hideButtons && (
+        <Button
+          onClick={() => setShowTutorial(true)}
+          className="fixed bottom-6 right-6 w-14 h-14 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 shadow-xl hover:shadow-2xl transition-all z-40"
+          title="View Tutorial"
+        >
+          <HelpCircle className="w-6 h-6 text-white" />
+        </Button>
+      )}
       
       {/* Tutorial Modal */}
       <TutorialModal 

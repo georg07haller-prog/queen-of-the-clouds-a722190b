@@ -5,6 +5,11 @@ import TweetTempest from './pages/TweetTempest';
 import OfficeInferno from './pages/OfficeInferno';
 import WellnessWhirlwind from './pages/WellnessWhirlwind';
 import SisterhoodSummit from './pages/SisterhoodSummit';
+import Landing from './pages/Landing';
+import FAQ from './pages/FAQ';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsOfService from './pages/TermsOfService';
+import Referral from './pages/Referral';
 import Layout from './Layout.jsx';
 
 
@@ -16,6 +21,11 @@ export const PAGES = {
     "OfficeInferno": OfficeInferno,
     "WellnessWhirlwind": WellnessWhirlwind,
     "SisterhoodSummit": SisterhoodSummit,
+    "Landing": Landing,
+    "FAQ": FAQ,
+    "PrivacyPolicy": PrivacyPolicy,
+    "TermsOfService": TermsOfService,
+    "Referral": Referral,
 }
 
 export const pagesConfig = {
