@@ -6,7 +6,6 @@ import { User, Crown, Sparkles, Mail, Award, Calendar } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { toast } from 'sonner';
-import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 export default function Profile() {
@@ -73,8 +72,6 @@ export default function Profile() {
   
   return (
     <div className="min-h-screen bg-gradient-to-br from-pink-50 via-purple-50 to-blue-50">
-      <Header />
-      
       <div className="max-w-4xl mx-auto px-4 py-12">
         {/* Profile Header */}
         <motion.div
